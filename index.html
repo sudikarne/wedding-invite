@@ -1,1 +1,223 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudishna & Vikash Wedding</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+  background: #fdf6f9;
+}
+
+.slider {
+  display: flex;
+  width: 600%;
+  height: 100vh;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #5a4a4a;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Pastel themes */
+.slide:nth-child(1) { background: #fceef5; }
+.slide:nth-child(2) { background: #f8f1ff; }
+.slide:nth-child(3) { background: #eef7f5; }
+.slide:nth-child(4) { background: #fff4ec; }
+.slide:nth-child(5) { background: #f5f7ff; }
+.slide:nth-child(6) { background: #fef6f0; }
+
+h1 {
+  font-size: 3em;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.flower {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hashtag {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #b076d1;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  padding: 10px 18px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background: #d8b4f8;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #c084fc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slider" id="slider">
+
+  <!-- Slide 1 -->
+  <div class="slide">
+    <div class="flower">🌸</div>
+    <h1>Sudishna</h1>
+    <h2>&</h2>
+    <h1>Vikash Kumar</h1>
+    <p>invite you to celebrate their wedding</p>
+    <div class="hashtag">#VISH</div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <div class="flower">🌿</div>
+    <h1>With the blessings of</h1>
+    <p>
+      <strong>Sridhar Karne & Rekha Karne</strong><br><br>
+      and<br><br>
+      <strong>Awadhesh Prasad Singh & Usha Singh</strong>
+    </p>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <div class="flower">💐</div>
+    <h1>Save the Date</h1>
+    <h2>April 20, 2026</h2>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide">
+    <div class="flower">🌷</div>
+    <h1>Wedding Ceremony</h1>
+    <p>Muhurtham</p>
+    <h2>11:00 AM</h2>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide">
+    <div class="flower">🌿</div>
+    <h1>Venue</h1>
+    <p>
+      Near NFC Bridge,<br>
+      Nacharam - Mallapur Rd,<br>
+      Mallapur, Secunderabad,<br>
+      Telangana 500076
+    </p>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide">
+    <div class="flower">🌼</div>
+    <h1>We can't wait to celebrate with you</h1>
+    <p>Join us on our special day ❤️</p>
+    <div class="hashtag">#VISH</div>
+  </div>
+
+</div>
+
+<div class="nav">
+  <button onclick="prevSlide()">←</button>
+  <button onclick="nextSlide()">→</button>
+</div>
+
+<script>
+let currentSlide = 0;
+const totalSlides = 6;
+
+function showSlide(index) {
+  const slider = document.getElementById('slider');
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+  if (currentSlide < totalSlides - 1) {
+    currentSlide++;
+  } else {
+    currentSlide = 0;
+  }
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+  } else {
+    currentSlide = totalSlides - 1;
+  }
+  showSlide(currentSlide);
+}
+
+/* Auto slide */
+setInterval(() => {
+  nextSlide();
+}, 5000);
+
+/* Swipe support */
+let startX = 0;
+
+document.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) nextSlide();
+  if (endX - startX > 50) prevSlide();
+});
+</script>
+
+</body>
+</html>
