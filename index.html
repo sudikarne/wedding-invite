@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ff8c00; /* dark orange text */
+    color: #800000; /* maroon red text */
   }
 
   .slide1 {
@@ -34,11 +34,16 @@
   h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 2em; /* reduced font size */
-    margin: 0.2em 0;
     z-index: 2;
     position: relative; /* ensures text is above petals */
     letter-spacing: 1.5px;
+    margin: 0; 
   }
+
+  /* Add elegant spacing between lines */
+  h1:nth-child(1) { margin-bottom: 1em; } /* Wedding Invitation */
+  h1:nth-child(2) { margin-bottom: 0.5em; } /* Sudishna */
+  h1:nth-child(3) { margin-top: 0; } /* Vikash */
 
   /* Petals */
   .petal {
