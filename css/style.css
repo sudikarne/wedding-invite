@@ -26,12 +26,9 @@ body {
 .slide1 h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 2em;
-  margin: 0;
+  margin: 2px 0; /* tighter spacing */
   letter-spacing: 1.5px;
 }
-
-.slide1 h1:nth-child(1) { margin-bottom: 1em; }
-.slide1 h1:nth-child(2) { margin-bottom: 0.5em; }
 
 /* Slide 2 message */
 .message {
@@ -82,4 +79,35 @@ body {
   color: #c2185b;
   font-weight: 600;
   border-bottom: 1px solid #c2185b;
+}
+
+/* Slide 1 - invite structure */
+
+.invite-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sub-text {
+  font-size: 0.9em;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.and {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5em;
+  margin: 8px 0;
+}
+
+.hashtag {
+  margin-top: 20px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+/* Optional: push slide1 slightly down */
+.slide1 {
+  padding-top: 40px;
 }
