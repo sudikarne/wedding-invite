@@ -1,0 +1,64 @@
+/* Base setup */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+  color: #c2185b; /* dark pink */
+}
+
+/* Each slide takes full screen */
+.slide {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('../background-1.jpg') no-repeat center center/cover;
+  flex-direction: column;
+}
+
+/* Slide 1 text */
+.slide1 h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  margin: 0;
+  letter-spacing: 1.5px;
+}
+
+.slide1 h1:nth-child(1) { margin-bottom: 1em; }
+.slide1 h1:nth-child(2) { margin-bottom: 0.5em; }
+
+/* Slide 2 message */
+.message {
+  font-size: 1.3em;
+  max-width: 600px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  padding: 20px;
+}
+
+/* Floating petals (only visually appear on top section) */
+.petal {
+  position: fixed;
+  top: -50px;
+  font-size: 20px;
+  animation: fall linear infinite;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Petal animation */
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) translateX(80px) rotate(360deg);
+  }
+}
