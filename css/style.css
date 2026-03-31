@@ -145,3 +145,44 @@ body {
   font-size: 2.2em;
   margin-top: 25px;
 }
+
+.wedding-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Great Vibes', cursive;
+  color: #c2185b;
+  text-align: center;
+  margin: 18px 0 8px;
+  line-height: 1.2;
+  letter-spacing: 0.8px;
+}
+
+.wedding-date span:first-child {
+  font-size: 1.8em;
+}
+
+.wedding-date span:last-child {
+  font-size: 1.3em;
+  margin-top: 6px;
+}
+
+.date-divider {
+  width: 90px;
+  height: 1px;
+  background: rgba(194, 24, 91, 0.7);
+  margin: 10px 0;
+  position: relative;
+}
+
+.date-divider::before {
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -54%);
+  background: url('../background-1.jpg') no-repeat center center/cover;
+  padding: 0 10px;
+  font-size: 0.8em;
+}
