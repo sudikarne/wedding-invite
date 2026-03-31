@@ -27,7 +27,7 @@ body {
   font-family: 'Great Vibes', cursive;
   font-size: 2em;
   margin: 2px 0; /* tighter spacing */
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
 /* Slide 3 message */
@@ -111,4 +111,21 @@ body {
 /* Optional: push slide2 slightly down */
 .slide2 {
   padding-top: 40px;
+}
+
+/* Slide 1 with Ghibli background */
+.slide1 {
+  font-family: 'Great Vibes', cursive;
+  padding-top: 120px; /* adjust to lower text nicely */
+  background: url('a_digital_painting_in_studio_ghibli_inspired_style.png') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Save the Date text */
+.save-date {
+  font-size: 3em;
+  color: #c2185b; /* nice dark pink */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin: 0;
+  z-index: 2;
 }
