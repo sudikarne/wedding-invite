@@ -30,20 +30,19 @@
     z-index: 2;
   }
 
-  /* Flower animation */
-  .flower {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-image: url('https://i.ibb.co/k9LfBwp/pink-flower.png'); /* sample pink flower */
-    background-size: cover;
-    top: -10%;
-    animation: float 10s linear infinite;
+  /* Floating petals */
+  .petal {
+    position: fixed;
+    top: -50px;
+    font-size: 20px;
+    animation: fall linear infinite;
+    opacity: 0.7;
   }
 
-  @keyframes float {
-    0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateX(100vw) translateY(100vh) rotate(360deg); opacity: 0; }
+  @keyframes fall {
+    to {
+    transform: translateY(110vh) rotate(360deg);
+   }
   }
 </style>
 </head>
