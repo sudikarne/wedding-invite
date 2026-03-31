@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation - Sudishna & Vikash</title>
-<!-- Elegant Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  /* Full-page container */
   body, html {
     margin: 0;
     padding: 0;
@@ -18,37 +16,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #f7c8d1; /* pastel pink text */
+    color: #ff8c00; /* dark orange text */
   }
 
-  /* Slide1 with background image */
   .slide1 {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     height: 100%;
     width: 100%;
+    text-align: center;
     background: url('background-1.jpg') no-repeat center center/cover;
   }
 
   h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 3em;
-    text-align: center;
+    font-size: 2em; /* reduced font size */
+    margin: 0.2em 0;
     z-index: 2;
-    margin: 0;
-    letter-spacing: 2px;
+    position: relative; /* ensures text is above petals */
+    letter-spacing: 1.5px;
   }
 
-  /* Petals animation */
+  /* Petals */
   .petal {
-    position: fixed;
-    top: -50px;
-    font-size: 20px;
-    animation: fall linear infinite;
-    opacity: 0.7;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://i.ibb.co/k9LfBwp/pink-flower.png');
+    background-size: cover;
+    top: -10%;
+    opacity: 0.8; /* slightly transparent */
+    z-index: 1; /* below text but above background */
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   @keyframes fall {
@@ -61,13 +65,14 @@
       opacity: 0;
     }
   }
-
 </style>
 </head>
 <body>
 
 <div class="slide1">
-  <h1>Wedding Invitation of<br>Sudishna & Vikash</h1>
+  <h1>Wedding Invitation</h1>
+  <h1>Sudishna</h1>
+  <h1>Vikash</h1>
 
   <!-- Petals -->
   <div class="petal" style="left: 5%; animation-duration: 12s;"></div>
