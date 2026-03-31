@@ -87,6 +87,7 @@ body {
   font-family: 'Great Vibes', cursive;
   font-size: 1.5em;
   margin-bottom: 20px;
+  margin-top: 80px; /* push the intro line lower */
 }
 
 .sub-text {
