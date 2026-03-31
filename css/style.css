@@ -35,10 +35,11 @@ body {
 
 /* Slide 2 message */
 .message {
-  font-size: 1.3em;
-  max-width: 600px;
-  line-height: 1.8;
-  letter-spacing: 1px;
+  font-family: 'Great Vibes', cursive; /* same as slide 1 */
+  font-size: 2em; /* slightly bigger to match elegance */
+  max-width: 700px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
   padding: 20px;
 }
 
