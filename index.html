@@ -46,6 +46,15 @@
 <div class="petal" style="left:85%; animation-duration:10s;">🌸</div>
 <div class="petal" style="left:95%; animation-duration:12s;">🌸</div>
 
+<!-- Background music -->
+<div class="music-player">
+  <audio id="bg-music" loop muted preload="auto">
+    <source src="your-song.mp3" type="audio/mpeg">
+    <source src="your-song.ogg" type="audio/ogg">
+  </audio>
+  <button id="music-toggle" class="music-btn">🔊</button>
+</div>
+
 <!-- Slide 2 -->
 <section class="slide slide2">
   <p class="message">
@@ -101,6 +110,25 @@
     <p class="hashtag">#vidhi</p>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.getElementById('bg-music');
+  const btn = document.getElementById('music-toggle');
+  
+  btn.addEventListener('click', function() {
+    if (audio.paused || audio.muted) {
+      audio.muted = false;
+      audio.play();
+      btn.textContent = '🔇';
+    } else {
+      audio.pause();
+      audio.muted = true;
+      btn.textContent = '🔊';
+    }
+  });
+});
+</script>
 
 </body>
 </html>
