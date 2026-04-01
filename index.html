@@ -119,15 +119,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const audio = document.getElementById('bg-music');
   const btn = document.getElementById('music-toggle');
   
+  // Start paused (no music)
+  audio.pause();
+  btn.textContent = '🔈';  // Speaker OFF = no music
+  
   btn.addEventListener('click', function() {
-    if (audio.paused || audio.muted) {
-      audio.muted = false;
-      audio.play();
-      btn.textContent = '🔇';
+    if (audio.paused) {
+      // Play music
+      audio.play().catch(e => console.log('Play failed:', e));
+      btn.textContent = '🔊';  // Speaker ON = music playing
     } else {
+      // Stop music
       audio.pause();
-      audio.muted = true;
-      btn.textContent = '🔊';
+      btn.textContent = '🔈';  // Speaker OFF = no music
     }
   });
 });
