@@ -217,6 +217,7 @@ body {
 .slide0 {
   background: none;
   overflow: hidden;
+  position: relative;
 }
 
 .slide0-img {
@@ -224,4 +225,21 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.slide0-text {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8em;
+  color: #c2185b;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 30px;
+  border-radius: 25px;
+  backdrop-filter: blur(8px);
 }
