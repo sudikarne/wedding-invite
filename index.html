@@ -50,11 +50,11 @@
 
 <!-- Background music -->
 <div class="music-player">
-  <audio id="bg-music" loop muted preload="auto">
+  <audio id="bg-music" loop preload="auto">
     <source src="your-song.mp3" type="audio/mpeg">
     <source src="your-song.ogg" type="audio/ogg">
   </audio>
-  <button id="music-toggle" class="music-btn">🔊</button>
+  <button id="music-toggle" class="music-btn">🔈</button>
 </div>
 
 <!-- Slide 2 -->
@@ -107,53 +107,26 @@
       Gopal Krishna - Kavitha
     </p>
 
-    <p class="near-dear">Ne ar&amp;Dear</p>
+    <p class="near-dear">Near&amp;Dear</p>
 
     <p class="hashtag">#vidhi</p>
   </div>
 </section>
 
 <script>
-let scrollInterval;
-let currentSlide = 0;
-
 document.addEventListener('DOMContentLoaded', function() {
-  const slides = document.querySelectorAll('.slide');
-  
-  function nextSlide() {
-    // Fade out current slide
-    slides[currentSlide].classList.add('fade-out');
-    
-    // Move to next
-    currentSlide = (currentSlide + 1) % slides.length;
-    
-    // Scroll instantly, then fade in
-    slides[currentSlide].scrollIntoView({ behavior: 'auto', block: 'start' });
-    setTimeout(() => {
-      slides[currentSlide].classList.add('fade-in');
-      // Clean up previous slide
-      if (currentSlide !== 0) {
-        slides[currentSlide - 1].classList.remove('fade-out', 'fade-in');
-      }
-    }, 100);
-  }
-  
-  function startAutoScroll() {
-    scrollInterval = setInterval(nextSlide, 2000);
-  }
-  
-  // Pause on hover
-  document.addEventListener('mouseenter', () => {
-    clearInterval(scrollInterval);
+  const audio = document.getElementById('bg-music');
+  const btn = document.getElementById('music-toggle');
+
+  btn.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = '🔊';
+    } else {
+      audio.pause();
+      btn.textContent = '🔈';
+    }
   });
-  
-  document.addEventListener('mouseleave', startAutoScroll);
-  
-  // Start
-  setTimeout(() => {
-    nextSlide();
-    startAutoScroll();
-  }, 1000);
 });
 </script>
 
