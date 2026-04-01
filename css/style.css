@@ -68,8 +68,13 @@ body {
 }
 
 .venue p {
-  font-size: 1em;
-  line-height: 1.6;
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+.venue h2 {
+  margin-bottom: 2px;
+  line-height: 1.1;
 }
 
 .map-link {
