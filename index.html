@@ -113,5 +113,39 @@
   </div>
 </section>
 
+<script>
+let scrollInterval;
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  
+  function nextSlide() {
+    slides[currentSlide].scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+    currentSlide = (currentSlide + 1) % slides.length;
+  }
+  
+  function startAutoScroll() {
+    scrollInterval = setInterval(nextSlide, 2000);  // 2 seconds
+  }
+  
+  // Pause on hover, resume when mouse leaves
+  document.addEventListener('mouseenter', () => {
+    clearInterval(scrollInterval);
+  });
+  
+  document.addEventListener('mouseleave', startAutoScroll);
+  
+  // Start after 1 second
+  setTimeout(() => {
+    nextSlide();
+    startAutoScroll();
+  }, 1000);
+});
+</script>
+
 </body>
 </html>
