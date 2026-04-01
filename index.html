@@ -115,29 +115,41 @@
 
 <script>
 let scrollInterval;
+let currentSlide = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.slide');
-  let currentSlide = 0;
   
   function nextSlide() {
-    slides[currentSlide].scrollIntoView({ 
-      behavior: 'auto',  // Instant positioning
-      block: 'start'
-    });
+    // Fade out current slide
+    slides[currentSlide].classList.add('fade-out');
+    
+    // Move to next
     currentSlide = (currentSlide + 1) % slides.length;
+    
+    // Scroll instantly, then fade in
+    slides[currentSlide].scrollIntoView({ behavior: 'auto', block: 'start' });
+    setTimeout(() => {
+      slides[currentSlide].classList.add('fade-in');
+      // Clean up previous slide
+      if (currentSlide !== 0) {
+        slides[currentSlide - 1].classList.remove('fade-out', 'fade-in');
+      }
+    }, 100);
   }
   
   function startAutoScroll() {
     scrollInterval = setInterval(nextSlide, 2000);
   }
   
+  // Pause on hover
   document.addEventListener('mouseenter', () => {
     clearInterval(scrollInterval);
   });
   
   document.addEventListener('mouseleave', startAutoScroll);
   
+  // Start
   setTimeout(() => {
     nextSlide();
     startAutoScroll();

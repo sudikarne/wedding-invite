@@ -240,3 +240,20 @@ body {
   backdrop-filter: blur(5px);
   font-family: 'Playfair Display', serif;  /* Ensures clean rendering */
 }
+
+.slide {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.slide.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.slide.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
