@@ -253,8 +253,8 @@ html {
 }
 
 .music-btn {
-  width: 75px;  /* Bigger */
-  height: 75px;
+  width: 65px;  /* Bigger */
+  height: 65px;
   border: none;
   border-radius: 50%;
   background: rgba(194, 24, 91, 0.95);
