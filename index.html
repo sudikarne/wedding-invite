@@ -121,19 +121,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // Start muted and paused
   audio.muted = true;
   audio.pause();
-  btn.textContent = '🔊';  // Speaker off = no music
+  btn.textContent = '🔇';  // Speaker off = no music
   
   btn.addEventListener('click', function() {
     if (audio.muted || audio.paused) {
       // Turn music ON (unmute and play)
       audio.muted = false;
       audio.play().catch(e => console.log('Autoplay prevented:', e));
-      btn.textContent = '🔇';  // Speaker on = music playing
+      btn.textContent = '🔊';  // Speaker on = music playing
     } else {
       // Turn music OFF (pause and mute)
       audio.pause();
       audio.muted = true;
-      btn.textContent = '🔊';  // Speaker off = no music
+      btn.textContent = '🔇';  // Speaker off = no music
     }
   });
 });
