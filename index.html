@@ -118,15 +118,22 @@ document.addEventListener('DOMContentLoaded', function() {
   const audio = document.getElementById('bg-music');
   const btn = document.getElementById('music-toggle');
   
+  // Start muted and paused
+  audio.muted = true;
+  audio.pause();
+  btn.textContent = '🔊';  // Speaker off = no music
+  
   btn.addEventListener('click', function() {
-    if (audio.paused || audio.muted) {
+    if (audio.muted || audio.paused) {
+      // Turn music ON (unmute and play)
       audio.muted = false;
-      audio.play();
-      btn.textContent = '🔇';
+      audio.play().catch(e => console.log('Autoplay prevented:', e));
+      btn.textContent = '🔇';  // Speaker on = music playing
     } else {
+      // Turn music OFF (pause and mute)
       audio.pause();
       audio.muted = true;
-      btn.textContent = '🔊';
+      btn.textContent = '🔊';  // Speaker off = no music
     }
   });
 });
