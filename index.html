@@ -119,19 +119,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const audio = document.getElementById('bg-music');
   const btn = document.getElementById('music-toggle');
   
-  // Start paused (no music)
-  audio.pause();
-  btn.textContent = '🔈';  // Speaker OFF = no music
+  // Start with correct button state (OFF)
+  btn.textContent = '🔈';  // Speaker OFF
   
   btn.addEventListener('click', function() {
-    if (audio.paused) {
-      // Play music
-      audio.play().catch(e => console.log('Play failed:', e));
-      btn.textContent = '🔊';  // Speaker ON = music playing
+    if (audio.paused || audio.muted) {
+      audio.muted = false;
+      audio.play();
+      btn.textContent = '🔊';  // Speaker ON when playing
     } else {
-      // Stop music
       audio.pause();
-      btn.textContent = '🔈';  // Speaker OFF = no music
+      audio.muted = true;
+      btn.textContent = '🔈';  // Speaker OFF when stopped
     }
   });
 });
