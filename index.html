@@ -120,14 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const btn = document.getElementById('music-toggle');
   
   btn.addEventListener('click', function() {
-    if (audio.paused || audio.muted) {
-      audio.muted = false;
-      audio.play();
-      btn.textContent = '🔇';
+    if (audio.paused) {
+      audio.play().catch(e => console.log('Play failed:', e));
+      btn.textContent = '🔊';  // Speaker ON
     } else {
       audio.pause();
-      audio.muted = true;
-      btn.textContent = '🔊';
+      btn.textContent = '🔈';  // Speaker OFF
     }
   });
 });

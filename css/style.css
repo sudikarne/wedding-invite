@@ -247,25 +247,28 @@ html {
 
 .music-player {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;  /* Higher than petals (z-index: 1) */
 }
 
 .music-btn {
-  width: 60px;
-  height: 60px;
+  width: 75px;  /* Bigger */
+  height: 75px;
   border: none;
   border-radius: 50%;
-  background: rgba(194, 24, 91, 0.9);
+  background: rgba(194, 24, 91, 0.95);
   color: white;
-  font-size: 1.4em;
+  font-size: 1.8em;  /* Bigger icon */
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);  /* Stronger shadow */
   transition: all 0.3s ease;
+  line-height: 1;
+  border: 3px solid rgba(255,255,255,0.3);
 }
 
 .music-btn:hover {
-  background: rgba(194, 24, 91, 1);
-  transform: scale(1.05);
+  background: #c2185b;
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
