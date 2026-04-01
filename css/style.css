@@ -104,8 +104,29 @@ body {
 
 .and {
   font-family: 'Great Vibes', cursive;
-  font-size: 1.5em;
-  margin: 8px 0;
+  font-size: 1.8em;
+  margin: 10px;
+  margin-bottom: 18px;
+  color: #c2185b;
+  letter-spacing: 1.2px;
+}
+
+.save-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: #c2185b;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.save-date-sub {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6em;
+  margin: 0;
+  color: #c2185b;
+  letter-spacing: 1px;
 }
 
 .hashtag {
