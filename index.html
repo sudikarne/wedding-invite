@@ -122,24 +122,22 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function nextSlide() {
     slides[currentSlide].scrollIntoView({ 
-      behavior: 'smooth',
+      behavior: 'auto',  // Instant positioning
       block: 'start'
     });
     currentSlide = (currentSlide + 1) % slides.length;
   }
   
   function startAutoScroll() {
-    scrollInterval = setInterval(nextSlide, 3000);  // 3 seconds
+    scrollInterval = setInterval(nextSlide, 2000);
   }
   
-  // Pause on hover, resume when mouse leaves
   document.addEventListener('mouseenter', () => {
     clearInterval(scrollInterval);
   });
   
   document.addEventListener('mouseleave', startAutoScroll);
   
-  // Start after 1 second
   setTimeout(() => {
     nextSlide();
     startAutoScroll();
